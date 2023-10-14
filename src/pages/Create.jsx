@@ -1,4 +1,5 @@
 import { useState } from "react"
+//import {useNavigate} from 'react-router-dom'
 import supabase from "../config/supabaseClient"
 import './Create.css'
 
@@ -26,6 +27,7 @@ const handleSubmit = async (e) => {
     if (data){
         console.log(data)
         setFormError(null)
+        //navigate('/')
     }
 
     console.log(name, desc, rating)

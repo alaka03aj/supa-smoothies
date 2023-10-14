@@ -1,0 +1,33 @@
+.__navbar{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.__navbar__buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.__navbar__home{
+    padding: 8px 16px;
+    border-radius: 2px;
+    border-color: #cf9393;
+    background-color: #f0e6e6;
+    border-width: 2px;
+}
+
+.__navbar__create{
+    padding: 8px 16px;
+    border-width: 2px;
+    background-color: #cf9393;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.__navbar__title{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}

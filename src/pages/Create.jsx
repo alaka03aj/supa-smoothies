@@ -1,9 +1,11 @@
 import { useState } from "react"
-//import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import supabase from "../config/supabaseClient"
 import './Create.css'
 
 const Create = () => {
+  const navigate = useNavigate()
+
     const [name, setName] = useState('')
     const [desc, setDesc] = useState('')
     const [rating, setRating] = useState('')
@@ -17,7 +19,7 @@ const handleSubmit = async (e) => {
         return
     }
 
-    const {data, error } = await supabase.from('smoothies').insert([{name, desc, rating}])
+    const {data, error } = await supabase.from('smoothies').insert([{name, desc, rating}]).select()
 
     if (error){
         console.log(error)
@@ -27,7 +29,7 @@ const handleSubmit = async (e) => {
     if (data){
         console.log(data)
         setFormError(null)
-        //navigate('/')
+        navigate("/")
     }
 
     console.log(name, desc, rating)
